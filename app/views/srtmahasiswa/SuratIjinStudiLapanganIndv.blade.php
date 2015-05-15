@@ -18,16 +18,6 @@
 	</style>
 
 	<title>Surat Ijin Studi Lapangan</title>
-	<?php
-	$date1 = date("Y-m-d H:i:s", strtotime($datas->created_at));
-   	$BulanIndo = array("Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember");
- 
-   	$tahun = substr($date1, 0, 4);
-   	$bulan = substr($date1, 5, 2);
-   	$tgl   = substr($date1, 8, 2);
-             
-   	$tanggal = $tgl . " " . $BulanIndo[(int)$bulan-1] . " ". $tahun;
-   	?>
 </head>
 <body>
 	<div align="center"><img src="assets/img/kopsurat2.jpg" border="0" width="732" height="96"></div>
@@ -61,14 +51,18 @@
 			<td width=15%>Nomor</td>
 			<td width=3% style="text-align:center;"> : </td>
 			<td width=42%>{{$datas->nomor_surat}}</td>
-			<td width=30% style="text-align:right;">{{$tanggal}}</td>
+			<td width=30% style="text-align:right;">{{tanggal($datas->created_at)}}</td>
 			<td width=10%></td>
 		</tr>
 		<tr>
 			<td width=10%></td>
 			<td width=15%>Lamp</td>
 			<td width=3% style="text-align:center"> : </td>
-			<td width=72%>{{$datas->jumlah_lamp}}</td>
+			<td width=72%> @if ($datas->jumlah_lamp == '')
+						    -
+						   @else
+						   {{$datas->jumlah_lamp}}
+						   @endif</td>
 			<td width=10%></td>
 		</tr>
 		<tr>
