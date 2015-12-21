@@ -37,7 +37,7 @@ Route::filter('auth', function()
 {
 	if( !Sentry::check() )
 	{
-		return Redirect::guest('login')->with('errorMessage', 'Silahkan login terlebih dulu');
+		return Redirect::to('/');
 	}
 });
 
@@ -60,7 +60,10 @@ Route::filter('auth.basic', function()
 
 Route::filter('guest', function()
 {
-	if (Auth::check()) return Redirect::to('/');
+	if( !Sentry::check() )
+	{
+		return Redirect::guest('login')->with('errorMessage', 'Silahkan login terlebih dulu');
+	}
 });
 
 /*

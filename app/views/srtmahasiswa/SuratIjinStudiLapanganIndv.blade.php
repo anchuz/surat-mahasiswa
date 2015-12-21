@@ -1,4 +1,4 @@
-<<html>
+<html>
 <head>
 	<style>
 		table.Myriad {
@@ -20,7 +20,7 @@
 	<title>Surat Ijin Studi Lapangan</title>
 </head>
 <body>
-	<div align="center"><img src="assets/img/kopsurat2.jpg" border="0" width="732" height="96"></div>
+	<div align="center"><img src="assets/img/Kopsurat2.jpg" border="0" width="732" height="96"></div>
 	<!--table  width=700px>
 		<tr>
 			<td width=10%><div align="center"><img src="assets/img/kopsurat_baru.jpg" border="0" ></div></td>
@@ -50,7 +50,7 @@
 			<td width=10%></td>
 			<td width=15%>Nomor</td>
 			<td width=3% style="text-align:center;"> : </td>
-			<td width=42%>{{$datas->nomor_surat}}</td>
+			<td style="padding-left: 50px;">/UN38.3/KM/{{tahun($datas->created_at)}}</td>
 			<td width=30% style="text-align:right;">{{tanggal($datas->created_at)}}</td>
 			<td width=10%></td>
 		</tr>
@@ -69,7 +69,7 @@
 			<td width=10%></td>
 			<td width=15%>Hal</td>
 			<td width=3% style="text-align:center"> : </td>
-			<td width=72%>Permohonan melaksanakan magang kerja</td>
+			<td width=72%>Permohonan melaksanakan studi lapangan</td>
 			<td width=10%></td>
 		</tr>
 	</table>
@@ -118,12 +118,12 @@
 						<td width=100%> {{$datas->nim}}</td>
 					</tr>
 					<tr>
-						<td>progran Studi</td>
+						<td>program Studi</td>
 						<td>:</td>
 						<td width=100%> {{$datas->Dataprodi->prodi}}</td>
 					</tr>
 					<tr>
-						<td>tahun Angkatan</td>
+						<td>tahun angkatan</td>
 						<td>:</td>
 						<td width=100%> {{$datas->angkatan}}</td>
 					</tr>
@@ -136,9 +136,15 @@
 		<tr><td></td></tr>
 		<tr>
 			<td width=8%></td>
-			<td width=90% style="text-align:justify;">untuk dapatnya {{$datas->keterangan}} di instansi saudara pada {{$datas->jadwal}}</td>
+			{{-- <td width=90% style="text-align:justify;">untuk dapatnya melakukan {{$datas->keterangan}} di instansi saudara pada {{$datas->jadwal}}</td> --}}
+			<td width=90% style="text-align:justify;">untuk dapatnya melakukan studi lapangan di instansi Saudara pada {{$datas->jadwal}}.</td>
 			<td width=8%></td>
 		</tr>
+		<tr><td></td></tr>
+		<tr><td></td></tr>
+		<tr><td></td></tr>
+		<tr><td></td></tr>
+		<tr><td></td></tr>
 		<tr><td></td></tr>
 		<tr><td></td></tr>
 		<tr><td></td></tr>
@@ -192,6 +198,6 @@
 			<td width=8%></td>
 		</tr>
 	</table>
-	<img style="position: fixed; bottom:0; left:0;" src="assets/img/footer.jpg" border="0" ></div>
+	<img style="position: fixed; bottom:30; left:0;" src="assets/img/footer.jpg" border="0" ></div>
 </body>
 </html>

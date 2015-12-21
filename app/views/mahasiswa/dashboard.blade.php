@@ -20,6 +20,15 @@
                 color: #fff;
                 font: 12px Geneva, Arial, Helvetica, sans-serif;
             }
+            #textbot {
+                width: 100%; height: auto;
+                border-bottom: 1px dotted  #4A80B5;
+                padding: 10px;
+                margin: auto;
+                text-align:center;
+                color: #fff;
+                font: 12px Geneva, Arial, Helvetica, sans-serif;
+            }
 
             .bg_footer{
                 background: #001151; 
@@ -140,15 +149,15 @@
 
                 <div class="">
 
-                    <div align="center"><a href="{{ URL::to('dashboard') }}"><img src="assets/img/logo.jpg" border="0" ></a><br>
+                    <div align="center"><a href="{{ URL::to('dashboard') }}"><img src="assets/img/Logo.jpg" border="0" ></a><br>
                     </div>
-                    <div id="div1"><br>
+                    <div id="textbot"><br>
                         Agar mempermudah mahasiswa untuk mengajuan surat keterangan atau surat ijin, mahasiswa dapat menggunakan aplikasi ini<br>
                         Informasi lebih lanjut hubungi loket mahasiswa D1<br>
                         <br />  
                     </div>
 
-                    <div align="center">
+                    {{-- <div align="center">
                         <div align="center"><br>
                             <a href="#" target="_blank"><img src="images/logokecil.jpg" border="0"></a><br>
                             <br>
@@ -156,7 +165,7 @@
                         <span style="text-align:left; color:#fff">
                             
                         </span>
-                    </div>
+                    </div> --}}
                 </div>
 
 

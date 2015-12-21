@@ -4,9 +4,9 @@ class SuratIjinStudiLapanganIndv extends \Eloquent {
 
 	// Add your validation rules here
 	public static $rules = [
-		'nomor_surat'	=> 'required',
+		// 'nomor_surat'	=> 'required',
 		'kepada'		=> 'required',
-		'alamat'		=> 'required',
+		// 'alamat'		=> 'required',
 		'kota'			=> 'required',
 		'mata_kuliah'	=> 'required',
 		'pembimbing'	=> 'required',
@@ -14,7 +14,7 @@ class SuratIjinStudiLapanganIndv extends \Eloquent {
 		'nim'			=> 'required|numeric',
 		'prodi'			=> 'required',
 		'angkatan'		=> 'required',
-		'keterangan'	=> 'required',
+		// 'keterangan'	=> 'required',
 		'jadwal'		=> 'required',
 		'persetujuan'	=> 'required',
 		// 'title' => 'required'

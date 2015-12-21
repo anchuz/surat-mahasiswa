@@ -21,6 +21,11 @@ class HomeController extends BaseController {
 		$this->layout->content = View::make('dashboard.index')->withTitle('Dashboard');
 	}
 
+	public function comingsoon()
+	{
+		$this->layout->content = View::make('mahasiswa.comingsoon')->withTitle('Coming Soon');	
+	}
+
 	public function authenticate()
 	{
 		// Ambil credentials dari $_POST variable

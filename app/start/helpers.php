@@ -10,3 +10,12 @@ function tanggal($tanggal)
              
    	return $tgl . " " . $BulanIndo[(int)$bulan-1] . " ". $tahun;
 }
+
+function tahun($tanggal)
+{
+	$date1 = date("Y-m-d H:i:s", strtotime($tanggal));
+ 
+   	$tahun = substr($date1, 0, 4);
+             
+   	return $tahun;
+}

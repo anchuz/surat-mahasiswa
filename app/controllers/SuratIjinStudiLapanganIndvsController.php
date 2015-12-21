@@ -9,7 +9,7 @@ class SuratIjinStudiLapanganIndvsController extends \BaseController {
 	 */
 	public function index()
 	{
-		return View::make('suratijinstudilapanganindvs.index')->withTitle('Surat Ijin Studi Lapangan Individu');;
+		return View::make('suratijinstudilapanganindvs.index')->withTitle('Surat Ijin Studi Lapangan Individu');
 	}
 
 	/**
@@ -29,24 +29,22 @@ class SuratIjinStudiLapanganIndvsController extends \BaseController {
 	 */
 	public function store()
 	{
-		$validator = Validator::make($data = Input::all(), Suratijinstudilapanganindv::$rules);
+		$validator = Validator::make($data = Input::all(), SuratIjinStudiLapanganIndv::$rules);
 
 		if ($validator->fails())
 		{
 			return Redirect::back()->withErrors($validator)->withInput();
 		}
 
-		$srt = Suratijinstudilapanganindv::create($data);
+		$srt = SuratIjinStudiLapanganIndv::create($data);
 
 		$idsrt = $srt->id;
-		$datasrt = Suratijinstudilapanganindv::whereId($idsrt)
+		$datasrt = SuratIjinStudiLapanganIndv::whereId($idsrt)
 			->with('Dataprodi')
 			->with('Datapersetujuan')
 			->first();
 		// return $datasrt;
 		return $this->exportPdf($datasrt);
-
-		return Redirect::route('surat_ijin_studi_lapangan_indv.index')->with("successMessage","Surat Berhasil di Buat ");
 	}
 
 	/**
@@ -111,10 +109,12 @@ class SuratIjinStudiLapanganIndvsController extends \BaseController {
 	}
 	private function exportPdf($surats)
 	{
+		$date = \Carbon\Carbon::now();
+		$name = 'SuratIjinStudiLapangan_'.$date->day.'_'.$date->month.'_'.$date->year.'_'.Date('H:i:s', strtotime($date)).'.pdf';
 		$data['datas'] = $surats;
 		$pdf = PDF::loadView('srtmahasiswa.SuratIjinStudiLapanganIndv',$data)->setPaper('a4');
-		$date = \Carbon\Carbon::now();
 
-		return $pdf->download('SuratIjinStudiLapangan_'.$date->day.'_'.$date->month.'_'.$date->year.'_'.Date('H:i:s', strtotime($date)).'.pdf');
+		return $pdf->download($name); 
+		// Redirect::route('surat_ijin_studi_lapangan_indv.index')->with("successMessage","Surat Berhasil di Buat ");
 	}
 }
